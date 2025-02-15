@@ -58,6 +58,21 @@ case "$ZIPFILE" in
 esac
 ui_print " ";
 
+case "$ZIPFILE" in
+  *eff*|*EFF*)
+    ui_print "Efficient CPUFreq variant detected,";
+    ui_print "Using Efficient CPUFreq DTB...";
+    mv *-effcpu-dtb $home/dtb;
+    rm *-normal-dtb;
+  ;;
+  *)
+    ui_print "Normal CPUFreq variant detected,";
+    ui_print "Using Normal CPUFreq DTB...";
+    mv *-normal-dtb $home/dtb;
+    rm *-effcpu-dtb;
+  ;;
+esac
+
 ## AnyKernel install
 dump_boot;
 
