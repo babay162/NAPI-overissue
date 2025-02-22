@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=FakeDreamer by Re-Noroi
+kernel.string=FakeDreamer Kernel by Re-Noroi
 do.devicecheck=1
 do.modules=0
 do.systemless=1
@@ -60,14 +60,14 @@ ui_print " ";
 
 case "$ZIPFILE" in
   *eff*|*EFF*)
-    ui_print "Efficient CPUFreq variant detected,";
-    ui_print "Using Efficient CPUFreq DTB...";
+    ui_print "Efficient CPU variant detected,";
+    ui_print "Using Efficient CPU DTB...";
     mv *-effcpu-dtb $home/dtb;
     rm *-normal-dtb;
   ;;
   *)
-    ui_print "Normal CPUFreq variant detected,";
-    ui_print "Using Normal CPUFreq DTB...";
+    ui_print "Normal CPU variant detected,";
+    ui_print "Using Normal CPU DTB...";
     mv *-normal-dtb $home/dtb;
     rm *-effcpu-dtb;
   ;;
